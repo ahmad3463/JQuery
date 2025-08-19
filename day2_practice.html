@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Practice DOM manipulation</title>
+    <style>
+        .dark{
+            background-color: black;
+            color: white;
+        }
+        
+    </style>
+  </head>
+  <body id="body">
+
+    <h2 id="heading">Hello World</h2>
+    <button id="btn">click</button><br />
+    <input type="text" id="username" />
+    <button id="btn2">click</button>
+    <button id="mode">switch Mode</button>
+    <script src="js/jquery.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#heading").text("Welcome jQuery!");
+        $("#btn").click(function () {
+          $("#heading").html("<b> Welcome  <i> jQuery! </i> </b>");
+        });
+        $("#btn2").click(function () {
+          $("#username").val("jQuery");
+        });
+        $("#mode").click(function () {
+            $('#body').toggleClass('dark light');
+        })
+      });
+    </script>
+  </body>
+</html>
