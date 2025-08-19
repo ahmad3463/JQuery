@@ -1,11 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>JQuery Day_1</title>
-</head>
-<body>
-        
-</body>
+   <style>
+    #box{
+        width: 50px;
+        height: 50px;
+        border: 1px solid black;
+    }
+   </style>
+  </head>
+  <body>
+    <h1 id="title">hello world</h1>
+    <p class="info2"></p>
+    <p class="info">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, modi ad
+      pariatur voluptates numquam earum nostrum voluptas odio, dolor quibusdam
+      aliquid commodi quis soluta vero sed officiis ab tempora. Enim!
+    </p>
+    <div id="box"></div>
+    <button id="btn1">click</button>
+    <button id="btn2">double click</button>
+    <script src="js/jquery.js"></script>
+    <script>
+      $("document").ready(function () {
+        $("#title").css("color", "blue");
+        $(".info2").text("Learning jQuery is fun!");
+        $("#btn1").click(function () {
+          $("body").css("background", "lightyellow");
+        });
+        $("#btn2").dblclick(function () {
+          $(".info").hide();
+        });
+       $('#box').hover(
+        function(){
+            $(this).css("background" , "green");
+        },
+        function(){
+            $(this).css("background" ,"gray");
+        }
+       )
+      });
+    </script>
+  </body>
 </html>
