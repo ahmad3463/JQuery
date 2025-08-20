@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ in jQuery</title>
+        <style>
+        .faqs{
+            width: 40%;
+            
+        }
+        h3{
+            padding: 10px;
+            border: 1px solid black;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        .highlight{
+            background-color: gray;
+        }
+        
+        </style>
+</head>
+<body>
+            <h1>FAQ in jQuery</h1>
+
+            <div class="faqs">
+                <h3>why use jquery?</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores, aperiam facilis? Magnam porro commodi ullam eaque nulla, consequuntur possimus odio harum molestiae ad dignissimos quos quae? At iste voluptates voluptatem?</p>
+                <h3>why use jquery?</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores, aperiam facilis? Magnam porro commodi ullam eaque nulla, consequuntur possimus odio harum molestiae ad dignissimos quos quae? At iste voluptates voluptatem?</p>
+            </div>
+
+            <script src="js/jquery.js"></script>
+            <script>
+                $(document).ready(function() {
+                    $('p').hide();
+                    $('p').first().show();
+                    $('h3').first().addClass('highlight')
+                    $('h3').click(function () {
+                       
+                        $('h3').next('p').slideUp(500); 
+                        $('h3').removeClass('highlight');
+                    $(this).next('p').slideToggle(500);
+                    $('h3').addClass('highlight')
+
+                    })  
+                 })
+            </script>
+</body>
+</html>
