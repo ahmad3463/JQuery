@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day_4 Traversing & Fitering</title>
+</head>
+<body>
+
+    <h1>Travsersing & Filtering <span>jQuery</span></h1>
+    <ul>
+        <li>jquery</li>
+        <li>js</li>
+        <li>php</li>
+        <li>wordpress</li>
+    </ul>
+
+    <script src="js/jquery.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('span').click(function (){
+                $(this).parent().css("color" , "blue");
+            })
+            $('li').first().css('color' , "gray");
+            $('li').last().css('color' , "red");
+            $('li').eq(2).css({
+                padding: '10px',
+                border: '1px solid black'
+            });
+            $("li").each(function(index){
+                $(this).prepend(index +1 +" : ");
+            })
+        })
+    </script>
+</body>
+</html>
