@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ajax with jquery</title>
+</head>
+<body>
+        <form action="" id="form" method="post">
+
+            <input type="text" name="name" id="name" placeholder="enter you name"><br><br>
+            <input type="text" name="comment" id="comment" placeholder="enter your comment"><br><br>
+            <button type="submit">submit</button>
+            
+        </form>
+
+        <script src="js/jquery.js"></script>
+        <script>
+            $(document).ready(function () {
+                $('#form').click( function (){
+                    let name = $('#name').val();
+                    let comment = $('#comment').val();
+                    if(name == '' || comment == ''){
+                        return false;
+                    };
+
+                    $.ajax({
+                        url : "ajax.php",
+                        method : "POST",
+                        data : $("#form").serialize(),
+                        cache : false,
+                        success : function(data){
+                            alert(data);
+                        },
+
+                        error: function(xhr , status, error){
+                            console.log(xhr);
+                        }
+                    })
+                })
+            })
+        </script>
+
+</body>
+</html>
