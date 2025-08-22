@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Concepts</title>
+  </head>
+  <body>
+    <form action="" id="myform" method="get">
+      <input type="text" id="name" placeholder="Enter Your name" /><br /><br />
+      <input type="text" id="phone" placeholder="Enter Your phone"/><br /><br />
+      <button type="submit">Submit Form</button>
+    </form>
+    <h3 id="message"></h3>
+
+    <script src="js/jquery.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#myform').submit(function(e){
+                e.preventDefault();
+                let name = $('#name').val();
+                let phone = $('#phone').val();
+                if(name == '' || phone == ''){
+                    $('#message').text('please fill all input fields');
+                }else {
+                    $('#message').html("<h2> Wellcome " + name + "</h2>");
+                    
+                }
+            })
+        })
+    </script>
+  </body>
+</html>
